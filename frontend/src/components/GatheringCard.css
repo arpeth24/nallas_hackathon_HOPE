@@ -1,0 +1,64 @@
+.gathering-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gathering-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.gathering-card h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.gathering-card p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.details-btn,
+.participate-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.details-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.details-btn:hover {
+  background-color: #2980b9;
+}
+
+.participate-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.participate-btn:hover {
+  background-color: #c0392b;
+}
+
+.participate-btn.active {
+  background-color: #27ae60;
+}
