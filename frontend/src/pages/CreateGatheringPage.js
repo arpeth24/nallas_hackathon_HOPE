@@ -5,6 +5,7 @@ import './CreateGatheringPage.css';
 function CreateGatheringPage({ currentUser }) {
   const [formData, setFormData] = useState({
     organizerName: currentUser?.name || '',
+    organizerId: currentUser?.uid || '',
     gatheringName: '',
     eventType: '',
     date: '',
@@ -14,6 +15,7 @@ function CreateGatheringPage({ currentUser }) {
     description: ''
   });
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const eventTypes = ['Religious', 'Sports', 'Club', 'Education', 'Get Together'];
@@ -21,6 +23,7 @@ function CreateGatheringPage({ currentUser }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setError('');
   };
 
   const handleSubmit = async (e) => {
@@ -39,10 +42,10 @@ function CreateGatheringPage({ currentUser }) {
         alert('Gathering created successfully!');
         navigate('/home');
       } else {
-        alert('Error creating gathering: ' + data.message);
+        setError(data.message || 'Error creating gathering');
       }
     } catch (error) {
-      alert('Error: ' + error.message);
+      setError(error.message);
     } finally {
       setLoading(false);
     }
@@ -57,6 +60,7 @@ function CreateGatheringPage({ currentUser }) {
     <div className="create-gathering-container">
       <div className="create-gathering-box">
         <h1>Host a Meeting</h1>
+        {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <input 
             type="text" 

@@ -34,8 +34,14 @@ function PhotoGallery() {
   return (
     <div className="gallery-container">
       <h1>Photo Gallery</h1>
+      <p className="gallery-subtitle">Browse memories from all community gatherings</p>
       <div className="search-bar">
-        <input type="text" placeholder="Search photos..." value={searchKeyword} onChange={(e) => setSearchKeyword(e.target.value)} />
+        <input 
+          type="text" 
+          placeholder="Search by event name or organizer name..." 
+          value={searchKeyword} 
+          onChange={(e) => setSearchKeyword(e.target.value)} 
+        />
         <button onClick={handleSearch}>Search</button>
       </div>
 
@@ -46,12 +52,13 @@ function PhotoGallery() {
               <img src={photo.photo} alt={photo.gatheringName} />
               <div className="photo-info">
                 <p className="gathering-name">{photo.gatheringName}</p>
+                <p className="organizer-name">by {photo.organizerName}</p>
                 <p className="event-type">{photo.eventType}</p>
               </div>
             </div>
           ))
         ) : (
-          <p className="no-photos">No photos found.</p>
+          <p className="no-photos">No photos found. Try searching with different keywords.</p>
         )}
       </div>
     </div>

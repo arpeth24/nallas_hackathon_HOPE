@@ -10,14 +10,19 @@ node_modules/
 /build
 /dist
 
-# Misc
-.DS_Store
+# Environment variables
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# Firebase - IMPORTANT: Never commit this file
+firebase-key.json
+firebase-admin-key.json
+*.json.example
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -30,4 +35,9 @@ yarn-error.log*
 *~
 
 # OS
+.DS_Store
 Thumbs.db
+
+# Build
+dist/
+build/

@@ -61,7 +61,98 @@
   margin-bottom: 20px;
 }
 
+.upload-section {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: 2px dashed #667eea;
+}
+
+.upload-section h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.photo-preview {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.photo-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.upload-input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.upload-input-group input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  flex: 1;
+  min-width: 200px;
+  cursor: pointer;
+}
+
+.upload-input-group input[type="file"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.upload-btn {
+  padding: 10px 20px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.upload-btn:hover:not(:disabled) {
+  background-color: #229954;
+}
+
+.upload-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.upload-info {
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+  margin: 0;
+}
+
 .photos-grid {
+  margin-top: 20px;
+}
+
+.photos-grid h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 15px;
@@ -71,6 +162,12 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.photo-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .photo-item img {
@@ -79,11 +176,29 @@
   object-fit: cover;
 }
 
-.photo-item p {
+.photo-info {
   padding: 10px;
   background-color: #f8f9fa;
-  margin: 0;
+}
+
+.photo-event {
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0 0 5px 0;
   font-size: 14px;
+}
+
+.photo-organizer {
+  color: #667eea;
+  font-size: 12px;
+  margin: 0;
+}
+
+.no-photos {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+  font-style: italic;
 }
 
 .loading {

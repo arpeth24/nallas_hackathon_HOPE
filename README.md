@@ -20,3 +20,17 @@ A web application to discover and organize community gatherings by event type.
 
 ## Project Structure
 
+## 🔒 Security & Setup
+
+### Firebase Key Setup
+
+1. Go to [Firebase Console](https://console.firebase.google.com)
+2. Select your project → **Project Settings** → **Service Accounts**
+3. Click **Generate New Private Key**
+4. Save as `backend/firebase-key.json`
+5. **Never commit this file** - it's in `.gitignore`
+
+### Environment Variables
+
+**Frontend (.env):**
+
